@@ -1,0 +1,467 @@
+*{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
+
+
+body {
+  font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #484848;
+  color: #9f9f9f;
+}
+
+h1,h2,h3 {
+  font-weight:700;
+  margin:0;
+  padding:16px;
+}
+
+
+header {
+  background:#000000;
+  padding: 16px 0 0;
+}
+
+section {
+  max-width:80%;
+  margin: 0 auto;
+  margin-top:32px;
+  -webkit-box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.25);
+  box-shadow: 0px 0px 16px 5px rgba(0,0,0,0.25);
+  background:#212121;
+}
+
+section h2 {
+  display:block;
+  padding:16px;
+  background:#111;
+}
+
+section .sectionInnerWrapper {
+  padding: 16px;
+}
+
+#teilnehmerliste {
+  margin:0;
+  padding:0;
+  max-height:300px;
+  overflow-y:scroll;
+}
+
+#teilnehmerliste li {
+  position:relative;
+  display:block;
+  padding:16px;;
+  padding-right:66px;
+  color:#fff;
+}
+
+.odd {
+  background-color:#484848 !important;
+  color: #fff !important;
+}
+
+.even {
+    background-color: white !important;
+    color: #484848 !important;
+}
+
+#teilnehmerliste li .delete {
+    cursor: pointer;
+    position: absolute;
+    right: 16px;
+    top: 8px;
+    width: 50px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    color:#fff;
+}
+
+.clear:after {
+    display: table;
+    clear:both;
+    content: "";
+}
+
+/* Formelemente */
+input, select, textarea {
+    font-family: inherit;
+    font-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    background-color: white;
+    border-radius: 0;
+}
+
+input {
+    display:block;
+    width: 50%;
+    padding: 8px;
+    height: 48px;
+    outline: none;
+    border: 0;
+    border-bottom: 2px solid rgba(0,0,0,0.16);
+    background: rgba(0,0,0,0.09);
+    border-radius: 2px 2px 0px 0px;
+    color: #fff;
+}
+
+label {
+  display: block;
+  color: rgba(0,0,0,0.87);
+  margin-bottom: 0.5rem;
+  text-align: left;
+  color:#9f9f9f;
+}
+
+.dataTables_wrapper .dataTables_info {
+    color: #9f9f9f !important;
+}
+
+.dt-button {
+    display: inline-block;
+    margin: 0 !important;
+    line-height: 32px;
+}
+
+button, .dt-button {
+    color: #fff;
+    background-color: #e31337;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    height: 32px;
+    outline: none;
+    padding: 0 16px;
+    font-weight: 500;
+    font-size: 16px;
+    margin-top:16px;
+}
+
+.options {
+    padding: 20px 0;
+}
+
+.option {
+    display:inline-block;
+}
+
+.option + .option {
+    margin-left:20px;
+}
+
+
+/* tabnav */
+nav {
+    background: #111;
+}
+
+nav button{
+    border-radius: 0px;
+    float:left;
+    background: none;
+    margin-top: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+nav button:hover {
+    background: #e31337;
+}
+
+nav button.active {
+    background: #000000;
+}
+
+nav button.active:after {
+    content: "";
+    position: absolute;
+    border: 1px solid #e31337;
+    width: 100%;
+    bottom:0;
+    left:0;
+}
+
+.tab-content {
+    display:none;
+}
+
+.tab-content.active {
+    display:block;
+}
+
+/* Notification style*/
+#notification {
+    position:absolute;
+    z-index:999;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.54);
+    top:0;
+    left:0;
+}
+#notification .content-wrapper {
+    margin:0 auto;
+    min-width:300px;
+    max-width:25%;
+    top:50%;
+    position:relative;
+    transform:translateY(-50%);
+    background-color:#fff;
+    font-size:14px;
+    font-weight:400;
+    color:rgba(0,0,0,0.54);
+    border-radius:2px
+}
+#notification .content-wrapper .content {
+    padding:24px
+}
+#notification .content-wrapper .content h3 {
+    margin:0;
+    padding:0;
+}
+#notification .content-wrapper .content p {
+    margin:24px 0 0
+}
+#notification .content-wrapper .action {
+    padding:4px;
+    height:52px;
+    line-height:36px;
+    text-align:right
+}
+#notification .content-wrapper .action a { 
+    margin:4px;
+    display:inline-block;
+    height:36px;
+    line-height:36px;
+    padding:0 16px;
+    min-width:64px;
+    font-size:14px;
+    text-decoration:none;
+    text-align:center;
+    text-transform:uppercase;
+    color:#e31337;
+    font-weight:500;
+    background-color: rgba(0,230,118,0.15);
+}
+#notification .content-wrapper .action a:hover {
+    background-color:rgba(0,230,118,1);
+    color:#fff;
+}
+
+/* Material Checkbox */
+
+input[type=checkbox] {
+    display: none;
+}
+
+.option label {
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 25px;
+  position:relative;
+  line-height: 20px;
+  margin:0;
+}
+
+input[type=checkbox] + label:after {
+    font-family: 'Material Icons';
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    border: 2px solid #757575;
+    border-radius: 2px;
+}
+
+input[type=checkbox]:checked + label {
+    color: #fff;
+}
+
+input[type=checkbox]:checked + label:after {
+    content: "\E5CA";
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 16px;
+    background: #e31337;
+    border-color: #e31337;
+}
+
+
+/* loading notification */
+
+#loadstatusSection {
+  margin: 100px auto;
+  width:  50px;
+  height: 50px;
+  position: relative;
+}
+
+#loadstatusSection .circle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#loadstatusSection .circle:before {
+  content: '';
+  display: block;
+  /* kreis mit steemit Hintergrundfarbe */
+  width: 12px;
+  height: 12px;
+  background-color: #06D6A9;
+  border-radius: 50%;
+  animation: lebe 1s infinite linear;
+}
+
+#loadstatusSection .circle0{
+  transform: rotate(36deg);
+}
+#loadstatusSection .circle1 {
+  transform: rotate(72deg);
+}
+#loadstatusSection .circle2 {
+  transform: rotate(108deg);
+}
+#loadstatusSection .circle3 {
+  transform: rotate(144deg);
+}
+#loadstatusSection .circle4 {
+  transform: rotate(180deg);
+}
+#loadstatusSection .circle5 {
+  transform: rotate(216deg);
+}
+#loadstatusSection .circle6 {
+  transform: rotate(252deg);
+}
+#loadstatusSection .circle7 {
+  transform: rotate(288deg);
+}
+#loadstatusSection .circle8 {
+  transform: rotate(324deg);
+ }
+#loadstatusSection .circle9 {
+  transform: rotate(360deg);
+}
+
+
+#loadstatusSection .circle1:before {
+  animation-delay: -0.9s;
+}
+#loadstatusSection .circle2:before {
+  animation-delay: -0.8s;
+}
+#loadstatusSection .circle3:before {
+  animation-delay: -0.7s;
+}
+#loadstatusSection .circle4:before {
+  animation-delay: -0.6s;
+}
+#loadstatusSection .circle5:before {
+  animation-delay: -0.5s;
+}
+#loadstatusSection .circle6:before {
+  animation-delay: -0.4s;
+}
+#loadstatusSection .circle7:before {
+  animation-delay: -0.3s;
+}
+#loadstatusSection .circle8:before {
+  animation-delay: -0.2s;
+}
+#loadstatusSection .circle9:before {
+  animation-delay: -0.1s;
+}
+
+
+@keyframes lebe {
+   0%, 20% {opacity: 1}
+   75%{transform: scale(0.6);}
+   100%{opacity: 0.1; transform: scale(0.1);}
+}
+
+
+.contentWrapper {
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.contentWrapper > header {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:120px;
+}
+
+.contentWrapper > .informationBanner {
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:60px;
+}
+
+.overflowWrapper {
+    width:100%;
+    height:100%;
+    overflow-x:hidden;
+}
+
+.tab-contents {
+    padding-top: 120px;
+    padding-bottom:60px;
+    width:100%;
+    height:100%;
+}
+
+.informationBanner {
+    background: #111;
+    padding: 5px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.informationBanner a {
+    color: #e31337;
+}
+
+/*svg */
+svg {
+    width: 16px;
+    height: 16px;
+    vertical-align: bottom;
+    margin-left:10px;
+}
+circle {
+    stroke: #1FBF8F;
+}
+path {
+    stroke: #1FBF8F;
+    fill: #1FBF8F;
+}
+    

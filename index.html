@@ -1,0 +1,116 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <link href="ressources/main.css" rel="stylesheet" title="Default Style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
+</head>
+<body>
+    <div class="contentWrapper">
+        <header>
+            <h1>Hive Zufallsgenerator</h1>
+            <nav class="clear">
+                <button id="tab-data" class="active">Datenerfassung</button>
+                <button id="tab-participants">Teilnehmer</button>
+                <button id="tab-winners">Gewinner</button>
+            </nav>
+        </header>
+
+        <div class="tab-contents">
+            <div class="overflowWrapper">
+                <div class="tab-content active" id="tab-content-data">
+                    <section>
+                        <h2>Daten vom Hive Post ermitteln</h2>
+                        <div class="sectionInnerWrapper">
+                            <form id="dataForm" name="data-form" method="get" action="" autocomplete="off">
+                                <label for="link">Link zum Post</label>
+                                <input type="text" id="postlink" placeholder="Bitte Link einf&uuml;gen" />
+                                <div class="options">
+                                    <div class="option">
+                                        <input type="checkbox" id="upvoterCheckbox" checked="checked" />
+                                        <label for="upvoterCheckbox">Upvoter hinzuf&uuml;gen</label>
+                                    </div>
+                                    <div class="option">
+                                        <input type="checkbox" id="commentorCheckbox" checked="checked" />
+                                        <label for="commentorCheckbox">Kommentatoren hinzuf&uuml;gen</label>
+                                    </div>
+                                    <div class="option">
+                                        <input type="checkbox" id="reestemerCheckbox" checked="checked" />
+                                        <label for="reestemerCheckbox">Resteemer hinzuf&uuml;gen</label>
+                                    </div>
+                                    <div class="option">
+                                        <input type="checkbox" id="botfilterCheckbox" checked="checked" />
+                                        <label for="botfilterCheckbox">Bots rausfiltern</label>
+                                    </div>
+                                </div>
+                                <button type="submit">Daten erfassen</button>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="tab-content teilnehmerlisteWrapper" id="tab-content-participants">
+                    <section>
+                        <h2>Teilnehmer manuell hinzuf&uuml;gen</h2>
+                        <div class="sectionInnerWrapper">
+                            <label for="teilnehmer">Name des Teilnehmers:</label>
+                            <input type="text" id="teilnehmer" placeholder="Snackaholic">
+                            <button id="knopf">Teilnehmer hinzuf&uuml;gen</button>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Teilnehmerliste</h2>
+                        <div class="sectionInnerWrapper">
+                            <table class="table" id="teilnehmerliste"></table>
+                            <button id="loeschen">Liste leeren</button>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="tab-content" id="tab-content-winners">
+                    <section>
+                        <h2>Ermittlung der Gewinner</h2>
+                        <div class="sectionInnerWrapper">
+                            <label for="anzahlGewinner">Anzahl der Gewinner:</label>
+                            <input type="text" id="anzahlGewinner" placeholder="0">
+                            <div class="options">
+                                <div class="option">
+                                    <input type="checkbox" id="allowMultipleWinning" checked="checked" />
+                                    <label for="allowMultipleWinning">Mehrfachziehung zulassen</label>
+                                </div>
+                            </div>
+                            <button id="ermitteln">Gewinner ermitteln</button>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2>Gewinnerliste</h2>
+                        <div class="sectionInnerWrapper">
+                            <table class="table" id="gewinnerliste"></table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="informationBanner">
+            <p>This is an open source project. <a href="https://github.com/snackaholic/hivefortune">View on Github</a> <a href="https://hive.blog/@snackaholic">Contact</a></p>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.4.1/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.4.1/js/buttons.flash.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.4.1/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.4.1/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="ressources/script.js"></script>
+    <script type="text/javascript" src="ressources/hive-min.js"></script>
+</body>
+</html>

@@ -20,7 +20,7 @@ function getbots(url) {
     });
 }
 
-getbots("https://snackaholic.github.io/steemfortune/ressources/bots.json");
+getbots("https://snackaholic.github.io/hivefortune/ressources/bots.json");
 
 function clearBotsFromParticipants() {
     var temparray = [];

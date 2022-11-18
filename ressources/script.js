@@ -17,6 +17,34 @@ function getbots(url) {
         format: "json"
     }).done(function (data) {
         bots = data;
+        const tableData = [];
+        for(let i = 0; i < bots.length; i++) {
+            tableData.push({"name" : bots[i]});
+        }
+        
+        if ($.fn.DataTable.isDataTable("#botliste")) {
+                $('#botliste').DataTable().clear().destroy();
+        }
+        $('#botliste').DataTable({
+                data: tableData,
+                dom: 'Bfrtip',
+                columns : [{ data: 'name', title : 'Name' }],
+                buttons: [{
+                    extend: 'pdf',
+                    title: 'hivefortune bot export',
+                    filename: 'hivefortune_bot_export'
+                }, {
+                    extend: 'excel',
+                    title: 'hivefortune bot export',
+                    filename: 'hivefortune_bot_export'
+                }, {
+                    extend: 'csv',
+                    title: 'hivefortune bot export',
+                    filename: 'hivefortune_bot_export'
+                }],
+                searching : false
+        });
+        $("#botliste").width("100%");
     });
 }
 

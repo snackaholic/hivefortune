@@ -91,6 +91,16 @@ function mergeParticipantAction(a, b) {
     return a;
 }
 
+// language switch
+var languageswitch = document.getElementById("languageswitch");
+languageswitch.addEventListener("click", function(){
+    if (window.location.href.indexOf("/en/") == -1) {
+        placeNotification("Sprache wechseln", `<p>Bitte wähle die passende Sprache aus:</p><ul><li><a href="https://snackaholic.github.io/hivefortune">Deutsch</a></li><li><a href="https://snackaholic.github.io/hivefortune/en/">Englisch</a></li></ul>`);
+    } else {
+        placeNotification("Change language", `<p>Please select the appropriate language:</p><ul><li><a href="https://snackaholic.github.io/hivefortune">German</a></li><li><a href="https://snackaholic.github.io/hivefortune/en/">English</a></li></ul>`);
+    }
+});
+
 // add stemian
 var knopf = document.getElementById("knopf");
 knopf.addEventListener("click", function(){

@@ -204,8 +204,16 @@ ermittelnKnopf.addEventListener("click", function(){
 	}
     // generate winnerstring
 	var gewinnerString = "";
-	for (var i = 0; i < winners.length; i++) {
-	    gewinnerString += "<br>" + winners[i].name;
+    const nameCounts = {};
+    for (const temp of winners) {
+        nameCounts[temp.name] = nameCounts[temp.name] ? nameCounts[temp.name] + 1 : 1;
+    }
+    const uniqueWinners = new Set(winners);
+	for (let actualWinner of uniqueWinners) {
+	    gewinnerString += "<br>" + actualWinner.name;
+        if (allowMultipleWinning) {
+            gewinnerString += " " + nameCounts[actualWinner.name] + "x";
+        }
 	}
 	
 	if (window.location.href.indexOf("/en/") == -1) {
